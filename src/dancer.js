@@ -1,5 +1,6 @@
 MakeDancer = function() {
-
+  //make an object
+  //return object
 };
 MakeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
