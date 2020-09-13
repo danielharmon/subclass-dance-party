@@ -1,11 +1,12 @@
 MakeDancer = function() {
   //make an object
+  this.$node = $('<span class="dancer"></span>');
   //return object
 };
 MakeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
-  setTimeout(dancer.step, timeBetweenSteps);
+  setTimeout(this.step, timeBetweenSteps);
 };
 
 MakeDancer.prototype.setPosition = function(top, left) {
@@ -16,5 +17,5 @@ MakeDancer.prototype.setPosition = function(top, left) {
     top: top,
     left: left
   };
-  dancer.$node.css(styleSettings);
+  this.$node.css(styleSettings);
 };
