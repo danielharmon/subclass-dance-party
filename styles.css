@@ -41,3 +41,19 @@ body, a:link, a:visited, a:active{
   50%  { transform: translateY(-100px); }
   100% { transform: translateY(0); }
 }
+
+.slide-1 {
+  animation-name: slide-1;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  border: 50px solid purple;
+  border-radius: 1px;
+}
+
+@keyframes slide-1 {
+  0%   { transform: translateX(0px); }
+  50%  { transform: translateX(-500px); }
+
+  100% { transform: translateX(0px); }
+}
