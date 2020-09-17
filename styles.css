@@ -5,7 +5,7 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
-  background-image: url(https://i.ytimg.com/vi/2xeYlbWEnpk/maxresdefault.jpg);
+  background-image: url('https://i.ytimg.com/vi/2xeYlbWEnpk/maxresdefault.jpg');
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -14,7 +14,7 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
-.lineUpButton{
+.lineUpButton, .danceTogether{
   padding:5px 12px;
   float:left;
 }
@@ -31,7 +31,7 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
-.bounce-1 {
+.bounce-1{
   animation-name: bounce-1;
   animation-timing-function: linear;
   animation-duration: 2s;
@@ -47,7 +47,7 @@ body, a:link, a:visited, a:active{
   100% { transform: translateY(0); }
 }
 
-.slide-1 {
+.slide-1{
   animation-name: slide-1;
   animation-timing-function: linear;
   animation-duration: 2s;
@@ -56,9 +56,33 @@ body, a:link, a:visited, a:active{
   border-radius: 1px;
 }
 
-@keyframes slide-1 {
+@keyframes slide-1{
   0%   { transform: translateX(0px); }
   50%  { transform: translateX(-500px); }
 
   100% { transform: translateX(0px); }
+}
+
+.slide-2{
+  animation-duration: 1s;
+}
+
+.boxDancer{
+  animation-name: myOrbit;
+  animation-timing-function: linear;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+/* @keyframes boxDancer{
+  0%   { transform: translateX(0px); }
+  25%  { transform: translateX(50px); }
+  50%  { transform: translateY(-50px); }
+  75%  { transform: translateX(-50px); }
+  75%  { transform: translateY(50px); }
+  100% { transform: translateX(0px); }
+} */
+@keyframes myOrbit {
+  from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }

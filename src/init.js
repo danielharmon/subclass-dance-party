@@ -29,10 +29,30 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+    $('.slide-1').on('mouseenter', function(ev) {
+      $(ev.target).addClass('slide-2');
+    });
+
   });
   $('.lineUpButton').on('click', function(event) {
     for (let i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineUp();
+    }
+  });
+
+  $('.danceTogether').on('click', function(event) {
+    for (let i = 0; i < window.dancers.length; i++) {
+      var topPosition = Number(window.dancers[i].$node.css('top').slice(0, -2));
+      var leftPosition = Number(window.dancers[i].$node.css('left').slice(0, -2));
+      console.log(leftPosition);
+      //window.dancers[i].$node.addClass('boxDancer');
+      window.dancers[i + 1].setPosition(topPosition, leftPosition);
+      window.dancers[i + 1].$node.addClass('boxDancer');
+      window.dancers[i + 2].setPosition(topPosition, leftPosition + 150);
+      window.dancers[i + 2].$node.addClass('boxDancer');
+      window.dancers[i + 3].setPosition(topPosition, leftPosition + 300);
+      window.dancers[i + 3].$node.addClass('boxDancer');
+      i += 3;
     }
   });
 
