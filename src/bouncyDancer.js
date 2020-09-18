@@ -1,14 +1,10 @@
-MakeBouncyDancer = function(top, left, timeBetweenSteps) {
-  //create object
-  MakeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass('bounce-1');
-  //return object
-};
-
-MakeBouncyDancer.prototype = Object.create(MakeDancer.prototype);
-
-MakeBouncyDancer.prototype.constructor = MakeBouncyDancer;
-MakeBouncyDancer.prototype.oldStep = MakeDancer.prototype.step;
-MakeBouncyDancer.prototype.step = function() {
-  this.oldStep();
-};
+class MakeBouncyDancer extends MakeDancer {
+  constructor (top, left, timeBetweenSteps) {
+    super (top, left, timeBetweenSteps);
+    this.$node.addClass('bounce-1');
+  }
+  step() {
+    this.oldStep = MakeDancer.prototype.step;
+    this.oldStep();
+  }
+}
