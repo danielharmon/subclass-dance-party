@@ -20,3 +20,8 @@ MakeSlideDancer.prototype.step = function() {
     this.$node.css('border', '50px solid ' + this.colors[this.i]);
   }
 };
+
+MakeSlideDancer.prototype.lineUp = function() {
+  line = $('body').width() / 2;
+  this.$node.css('top', line);
+};

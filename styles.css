@@ -63,9 +63,6 @@ body, a:link, a:visited, a:active{
   100% { transform: translateX(0px); }
 }
 
-.slide-2{
-  animation-duration: 1s;
-}
 
 .boxDancer{
   animation-name: myOrbit;
@@ -74,15 +71,11 @@ body, a:link, a:visited, a:active{
   animation-iteration-count: infinite;
 }
 
-/* @keyframes boxDancer{
-  0%   { transform: translateX(0px); }
-  25%  { transform: translateX(50px); }
-  50%  { transform: translateY(-50px); }
-  75%  { transform: translateX(-50px); }
-  75%  { transform: translateY(50px); }
-  100% { transform: translateX(0px); }
-} */
 @keyframes myOrbit {
   from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
   to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+.slide-2{
+  animation-duration: 1s;
 }

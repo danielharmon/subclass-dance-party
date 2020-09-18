@@ -13,7 +13,8 @@ MakeDancer.prototype.step = function() {
 };
 
 MakeDancer.prototype.lineUp = function() {
-  this.$node.css('left', '1px');
+  line = $('body').height() / 2;
+  this.$node.css('left', line);
 };
 
 MakeDancer.prototype.setPosition = function(top, left) {
