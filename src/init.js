@@ -1,8 +1,7 @@
+
 $(document).ready(function() {
   window.dancers = [];
-  // var MakeBlinkyDancer;
-  // var MakeBouncyDancer;
-  // var MakeSlideDancer;
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -17,6 +16,7 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
+
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
@@ -31,14 +31,31 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
-    $('.slide-1').on('mouseenter', function(ev) {
+    $('.dancer').on('mouseenter', function(ev) {
       $(ev.target).addClass('slide-2');
     });
 
   });
   $('.lineUpButton').on('click', function(event) {
     for (let i = 0; i < window.dancers.length; i++) {
+
       window.dancers[i].lineUp();
+    }
+  });
+  $('.clearFloor').on('click', function(event) {
+    for (let i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].$node.remove();
+    }
+    window.dancers = [];
+  });
+  $('.reset').on('click', function(event) {
+    for (let i = 0; i < window.dancers.length; i++) {
+      var oldDancer = window.dancers[i];
+      var newTop = $('body').height() * Math.random();
+      var newLeft = $('body').width() * Math.random();
+      oldDancer.setPosition(newTop, newLeft);
+      oldDancer.$node.removeClass('slide-2');
+      oldDancer.$node.removeClass('boxDancer');
     }
   });
 
@@ -46,7 +63,7 @@ $(document).ready(function() {
     for (let i = 0; i < window.dancers.length; i++) {
       var topPosition = Number(window.dancers[i].$node.css('top').slice(0, -2));
       var leftPosition = Number(window.dancers[i].$node.css('left').slice(0, -2));
-      console.log(leftPosition);
+
       //window.dancers[i].$node.addClass('boxDancer');
       window.dancers[i + 1].setPosition(topPosition, leftPosition);
       window.dancers[i + 1].$node.addClass('boxDancer');

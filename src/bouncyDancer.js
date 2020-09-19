@@ -1,4 +1,4 @@
-class MakeBouncyDancer extends MakeDancer {
+var MakeBouncyDancer = class extends MakeDancer {
   constructor (top, left, timeBetweenSteps) {
     super (top, left, timeBetweenSteps);
     this.$node.addClass('bounce-1');
@@ -7,4 +7,4 @@ class MakeBouncyDancer extends MakeDancer {
     this.oldStep = MakeDancer.prototype.step;
     this.oldStep();
   }
-}
+};

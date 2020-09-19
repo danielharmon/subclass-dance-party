@@ -1,4 +1,4 @@
-class MakeSlideDancer extends MakeDancer {
+var MakeSlideDancer = class extends MakeDancer {
   constructor (top, left, timeBetweenSteps) {
     super (top, left, timeBetweenSteps);
     this.$node.addClass('slide-1');
@@ -15,7 +15,7 @@ class MakeSlideDancer extends MakeDancer {
     this.oldStep();
   }
   lineUp() {
-    line = $('body').width() / 2;
+    var line = $('body').width() / 2;
     this.$node.css('top', line);
   }
-}
+};

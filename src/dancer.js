@@ -1,4 +1,4 @@
-class MakeDancer {
+var MakeDancer = class {
   constructor (top, left, timeBetweenSteps) {
     this.$node = $('<span class="dancer"></span>');
     this.timeBetweenSteps = timeBetweenSteps;
@@ -11,7 +11,7 @@ class MakeDancer {
   }
 
   lineUp() {
-    line = $('body').height() / 2;
+    var line = $('body').height() / 2;
     this.$node.css('left', line);
   }
 
@@ -22,4 +22,4 @@ class MakeDancer {
     };
     this.$node.css(styleSettings);
   }
-}
+};
